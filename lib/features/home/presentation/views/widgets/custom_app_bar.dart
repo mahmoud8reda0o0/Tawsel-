@@ -1,18 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
-class CustomAppBar extends StatelessWidget {
-  const CustomAppBar({
+class CustomAppBarForHomeScreen extends StatelessWidget {
+  const CustomAppBarForHomeScreen({
     super.key,
   });
 
   @override
   Widget build(BuildContext context) {
     return ListTile(
-      leading: const Card(
-        child: Padding(
-          padding: EdgeInsets.all(4.0),
-          child: Icon(Icons.notifications_active_rounded),
+      leading: IconButton(
+        style: IconButton.styleFrom(
+          padding: EdgeInsets.zero,
         ),
+        onPressed: () {},
+        icon: SvgPicture.asset("images/notifications icon2.svg"),
       ),
       title: const Text(
         "برجر كينج",
