@@ -13,13 +13,13 @@ class FreeWidget {
         primary: selectcolor? Colors.orange[800] : Colors.white,
       ),
       child: SizedBox(
-        height: 60,
+        height:47,
         width: width * 0.9,
         child: Center(
           child: Text(
             buttonName,
             style: TextStyle(
-                fontSize: 25, fontWeight: FontWeight.bold, color: Colors.black),
+                fontSize: 20, fontWeight: FontWeight.bold, color: Colors.black),
           ),
         ),
       ),
@@ -76,10 +76,9 @@ class FreeWidget {
               lastTitle,
               textAlign: TextAlign.right,
               style: TextStyle(
-
                   color: Colors.white,
                   fontWeight: FontWeight.bold,
-                  fontSize: 18),
+                  fontSize: 16),
             ),
           )
         ],
@@ -89,4 +88,9 @@ class FreeWidget {
   Widget FormSignIn(){
     return Form(child: Column(),);
   }
+
+  Widget sizeBoxForm({ double? height,double? width,Widget? child}){
+    return SizedBox();
+  }
+
 }

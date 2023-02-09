@@ -21,7 +21,7 @@ class SignOrLog_s extends State<SignOrLog> with TickerProviderStateMixin {
           Column(
             children: [
               SizedBox(
-                height: 420,
+                height: 440,
               ),
               Container(
                 padding: EdgeInsets.all(10),

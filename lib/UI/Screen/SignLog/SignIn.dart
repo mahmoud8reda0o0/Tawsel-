@@ -24,12 +24,12 @@ class SignIn_s extends State<SignIn> {
             // crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               SizedBox(
-                height: 150,
+                height: _height * 0.15,
               ),
               Center(
                 child: SizedBox(
-                  height: 200,
-                  width: 200,
+                  height: 180,
+                  width: 180,
                   child: Image(
                     image: AssetImage('assets/image/splash.png'),
                   ),
@@ -71,9 +71,7 @@ class SignIn_s extends State<SignIn> {
                           ),
                         ),
                       ),
-                      SizedBox(
-                        height: 20,
-                      ),
+                      sizedBox(context),
                       TextFormField(
                         controller: _passwordCon,
                         validator: (value) {
@@ -105,9 +103,6 @@ class SignIn_s extends State<SignIn> {
                           ),
                         ),
                       ),
-                      SizedBox(
-                        height: 20,
-                      ),
                       TextButton(
                         onPressed: () {
                           ScaffoldMessenger.of(context).showSnackBar(
@@ -124,9 +119,7 @@ class SignIn_s extends State<SignIn> {
                           ),
                         ),
                       ),
-                      SizedBox(
-                        height: 20,
-                      ),
+                     sizedBox(context),
                       ElevatedButton(
                         onPressed: () {
                           if (_formKey.currentState!.validate()) {
@@ -156,7 +149,6 @@ class SignIn_s extends State<SignIn> {
                           ),
                         ),
                       ),
-                      SizedBox(height: 40,)
                     ],
                   ),
                 ),
@@ -165,6 +157,11 @@ class SignIn_s extends State<SignIn> {
           )
         ],
       ),
+    );
+  }
+  Widget sizedBox(BuildContext context){
+    return SizedBox(
+      height: MediaQuery.of(context).size.height*0.01,
     );
   }
 }
