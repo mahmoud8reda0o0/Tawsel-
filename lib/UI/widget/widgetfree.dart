@@ -4,10 +4,10 @@ import 'package:flutter/material.dart';
 import 'package:tawssel/UI/Screen/SignLog/SignIn.dart';
 
 class FreeWidget {
-  Widget elevatedbottom({required BuildContext context,required bool selectcolor,required double width, required String buttonName, MaterialColor? buttonColor}) {
+  Widget elevatedbottom({required BuildContext context,required bool selectcolor,required double width, required String buttonName, MaterialColor? buttonColor,required var page}) {
     return ElevatedButton(
       onPressed: () {
-        Navigator.push(context, MaterialPageRoute(builder: (context)=>SignIn()));
+        Navigator.push(context, MaterialPageRoute(builder: (context)=>page));
       },
       style: ElevatedButton.styleFrom(
         primary: selectcolor? Colors.orange[800] : Colors.white,
@@ -88,7 +88,45 @@ class FreeWidget {
   Widget FormSignIn(){
     return Form(child: Column(),);
   }
+  Widget textFormField({required TextEditingController controller,String? hintText,bool passEye=false,Widget? child,TextInputType? type}){
+    return Column(
+      children: [
+        TextFormField(
+          controller: controller,
+          validator: (value) {
+            if (value == null||value.length<5 )
+              return 'اعد ادخال البيانات صحيحة ';
+            else
+              return null;
+          },
+          textAlign: TextAlign.right,
+          obscureText: !passEye,
+          keyboardType: type,
+          style: TextStyle(color: Colors.black),
+          decoration: InputDecoration(
+            prefixIcon: child,
+            fillColor: Colors.white,
+            filled: true,
+            hintText:hintText,
+            enabledBorder: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(10.0),
+              borderSide: BorderSide(
+                color: Colors.white10,
 
+              ),
+            ),
+            focusedBorder: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(10),
+              borderSide: BorderSide(
+                color: Colors.yellowAccent
+              )
+            ),
+          ),
+        ),
+        SizedBox(height: 8,)
+      ],
+    );
+  }
   Widget sizeBoxForm({ double? height,double? width,Widget? child}){
     return SizedBox();
   }
