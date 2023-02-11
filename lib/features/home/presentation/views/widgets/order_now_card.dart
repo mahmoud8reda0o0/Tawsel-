@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:tawssel/core/utils/styles.dart';
 
+import 'package:flutter_svg/flutter_svg.dart';
+
+import '../../../../../core/utils/styles.dart';
 
 class OrderNowCard extends StatelessWidget {
   const OrderNowCard({
@@ -12,37 +14,40 @@ class OrderNowCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Card(
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceAround,
-        children: [
-          Padding(
-            padding: const EdgeInsets.symmetric(vertical: 20),
-            child: SizedBox(
-              height: height * 0.2,
-              child: Image.asset("images/delivery logo.png"),
-            ),
-          ),
-          Column(
-            children: [
-              const Text(
-                "استلم فلوسك \nوالتوصيل علينا",
-                textAlign: TextAlign.right,
-                style: Styles.textStyle20,
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 12),
+      child: Card(
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: [
+            Padding(
+              padding: const EdgeInsets.symmetric(vertical: 20),
+              child: SizedBox(
+                height: height * 0.22,
+                child: SvgPicture.asset("images/delivery superhero2.svg"),
               ),
-              ElevatedButton(
-                onPressed: () {},
-                child: const Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 8),
-                  child: Text(
-                    "أطلب دلوقتي",
-                    style: Styles.textStyle18,
+            ),
+            Column(
+              children: [
+                const Text(
+                  "استلم فلوسك \nوالتوصيل علينا",
+                  textAlign: TextAlign.right,
+                  style: Styles.textStyle20,
+                ),
+                ElevatedButton(
+                  onPressed: () {},
+                  child: const Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 8),
+                    child: Text(
+                      "أطلب دلوقتي",
+                      style: Styles.textStyle16,
+                    ),
                   ),
                 ),
-              ),
-            ],
-          ),
-        ],
+              ],
+            ),
+          ],
+        ),
       ),
     );
   }

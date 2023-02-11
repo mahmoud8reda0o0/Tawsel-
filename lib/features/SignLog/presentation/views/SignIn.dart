@@ -1,7 +1,9 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
-import 'package:tawssel/UI/Screen/SignLog/LogIn.dart';
-import 'package:tawssel/UI/widget/widgetfree.dart';
+import 'package:tawssel/features/SignLog/presentation/views/widget/widgetfree.dart';
+import 'package:tawssel/features/home/presentation/views/home_view.dart';
+
+import '../../../home/presentation/views/bottom_navigation_bar_view.dart';
 
 class SignIn extends StatefulWidget {
   State<StatefulWidget> createState() => SignIn_s();
@@ -27,7 +29,7 @@ class SignIn_s extends State<SignIn> {
               SizedBox(
                 height: _height * 0.15,
               ),
-              Center(
+              const Center(
                 child: SizedBox(
                   height: 180,
                   width: 180,
@@ -36,14 +38,14 @@ class SignIn_s extends State<SignIn> {
                   ),
                 ),
               ),
-              Text(
+              const Text(
                 'تسجيل الدخول ',
                 style: TextStyle(
                     fontSize: 25,
                     color: Colors.white,
                     fontWeight: FontWeight.bold),
               ),
-              Text(
+              const Text(
                 'قم بتسجيل الدخول للمتابعة ',
                 style: TextStyle(fontSize: 18, color: Colors.white),
               ),
@@ -62,7 +64,7 @@ class SignIn_s extends State<SignIn> {
                         },
                         textAlign: TextAlign.right,
                         keyboardType: TextInputType.number,
-                        style: TextStyle(color: Colors.black),
+                        style: const TextStyle(color: Colors.black),
                         decoration: InputDecoration(
                           fillColor: Colors.white,
                           filled: true,
@@ -84,18 +86,18 @@ class SignIn_s extends State<SignIn> {
                         textAlign: TextAlign.right,
                         obscureText: !_passwordEye,
                         keyboardType: TextInputType.number,
-                        style: TextStyle(color: Colors.black),
+                        style: const TextStyle(color: Colors.black),
                         decoration: InputDecoration(
                           prefixIcon: IconButton(
                               onPressed: () {
                                 setState(() => _passwordEye = !_passwordEye);
                               },
                               icon: _passwordEye
-                                  ? Icon(
+                                  ? const Icon(
                                       Icons.remove_red_eye,
                                       color: Colors.blue,
                                     )
-                                  : Icon(Icons.remove_red_eye_outlined)),
+                                  : const Icon(Icons.remove_red_eye_outlined)),
                           fillColor: Colors.white,
                           filled: true,
                           hintText: 'الرقم السري ',
@@ -107,12 +109,12 @@ class SignIn_s extends State<SignIn> {
                       TextButton(
                         onPressed: () {
                           ScaffoldMessenger.of(context).showSnackBar(
-                            SnackBar(
+                            const SnackBar(
                               content: Text('Open Forget Password Pages'),
                             ),
                           );
                         },
-                        child: Align(
+                        child: const Align(
                           alignment: Alignment.centerLeft,
                           child: Text(
                             'نسيت كلمة السر ؟',
@@ -125,9 +127,16 @@ class SignIn_s extends State<SignIn> {
                         onPressed: () {
                           if (_formKey.currentState!.validate()) {
                             ScaffoldMessenger.of(context).showSnackBar(
-                              SnackBar(
+                              const SnackBar(
                                 content: Text('Open main Page'),
                                 duration: Duration(seconds: 1),
+                              ),
+                            );
+                            Navigator.of(context).push(
+                              MaterialPageRoute(
+                                builder: (context) {
+                                  return BottomNavigationBarView();
+                                },
                               ),
                             );
                             }
@@ -137,7 +146,7 @@ class SignIn_s extends State<SignIn> {
                         style: ElevatedButton.styleFrom(
                           primary: Colors.orange[800],
                         ),
-                        child: SizedBox(
+                        child: const SizedBox(
                           width: 500,
                           height: 50,
                           child: Center(

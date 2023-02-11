@@ -1,10 +1,8 @@
-import 'dart:ui';
-
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
-import 'package:tawssel/UI/Screen/SignLog/LogIn.dart';
-import 'package:tawssel/UI/Screen/SignLog/SignIn.dart';
-import 'package:tawssel/UI/widget/widgetfree.dart';
+import 'package:tawssel/features/SignLog/presentation/views/widget/widgetfree.dart';
+import 'LogIn.dart';
+import 'SignIn.dart';
 
 class SignOrLog extends StatefulWidget {
   State<StatefulWidget> createState() => SignOrLog_s();
@@ -22,11 +20,11 @@ class SignOrLog_s extends State<SignOrLog> with TickerProviderStateMixin {
           FreeWidget().backgroundScreenColor(height: _height, width: _width),
           Column(
             children: [
-              SizedBox(
+              const SizedBox(
                 height: 440,
               ),
               Container(
-                padding: EdgeInsets.all(10),
+                padding: const EdgeInsets.all(10),
                 height: 200,
                 width: double.infinity,
                 //color: Colors.blue,
@@ -40,11 +38,11 @@ class SignOrLog_s extends State<SignOrLog> with TickerProviderStateMixin {
                       width: _width,
                       buttonName: 'تسجيل الدخول',
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 20,
                     ),
                     FreeWidget().elevatedbottom(
-                      page: LogIn(),
+                      page: const LogIn(),
                       context: context,
                         selectcolor: false,
                         width: _width,
@@ -56,7 +54,7 @@ class SignOrLog_s extends State<SignOrLog> with TickerProviderStateMixin {
           ),
           Column(
             children: [
-              SizedBox(
+              const SizedBox(
                 height: 100,
               ),
               Center(
@@ -88,7 +86,7 @@ class SignOrLog_s extends State<SignOrLog> with TickerProviderStateMixin {
                       pageSnapping: true,
                       viewportFraction: 1,
                       autoPlay: true,
-                      autoPlayAnimationDuration: Duration(seconds: 1)
+                      autoPlayAnimationDuration: const Duration(seconds: 1)
                     ),
                   ),
                 ),

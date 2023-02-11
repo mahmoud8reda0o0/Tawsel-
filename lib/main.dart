@@ -1,6 +1,9 @@
+
 import 'package:flutter/material.dart';
-import 'package:tawssel/UI/Screen/SignLog/LogIn.dart';
-import 'package:tawssel/UI/Screen/SplashScreen/SplashScreen.dart';
+import 'package:tawssel/features/SplashScreen/SplashScreen.dart';
+
+import 'features/rest password/presentation/views/homescreen.dart';
+
 
 void main() {
   runApp(const MyApp());
@@ -9,14 +12,17 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
 
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Tawssel',
       debugShowCheckedModeBanner: false,
-
-      home: Splash_Screen.SplashScreen(),
+      theme: ThemeData(
+        primarySwatch: Colors.deepOrange,
+      ),
+      home:  const Scaffold(
+        body: Homescreen(),
+        //Splash_Screen.SplashScreen(),
+      ),
     );
   }
 }

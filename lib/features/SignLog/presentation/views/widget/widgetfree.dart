@@ -1,7 +1,5 @@
 import 'dart:ui';
-
 import 'package:flutter/material.dart';
-import 'package:tawssel/UI/Screen/SignLog/SignIn.dart';
 
 class FreeWidget {
   Widget elevatedbottom({required BuildContext context,required bool selectcolor,required double width, required String buttonName, MaterialColor? buttonColor,required var page}) {
@@ -18,7 +16,7 @@ class FreeWidget {
         child: Center(
           child: Text(
             buttonName,
-            style: TextStyle(
+            style: const TextStyle(
                 fontSize: 20, fontWeight: FontWeight.bold, color: Colors.black),
           ),
         ),
@@ -33,7 +31,7 @@ class FreeWidget {
           fit: BoxFit.fill,
           child: ImageFiltered(
             imageFilter: ImageFilter.blur(sigmaY: 5, sigmaX: 5),
-            child: Image(
+            child: const Image(
               image: AssetImage('assets/image/signscreen.png'),
             ),
           )),
@@ -65,7 +63,7 @@ class FreeWidget {
           Center(
             child: Text(
               centerTitle,
-              style: TextStyle(
+              style: const TextStyle(
                   color: Colors.white,
                   fontWeight: FontWeight.bold,
                   fontSize: 25),
@@ -75,7 +73,7 @@ class FreeWidget {
             child: Text(
               lastTitle,
               textAlign: TextAlign.right,
-              style: TextStyle(
+              style: const TextStyle(
                   color: Colors.white,
                   fontWeight: FontWeight.bold,
                   fontSize: 16),
@@ -102,7 +100,7 @@ class FreeWidget {
           textAlign: TextAlign.right,
           obscureText: !passEye,
           keyboardType: type,
-          style: TextStyle(color: Colors.black),
+          style: const TextStyle(color: Colors.black),
           decoration: InputDecoration(
             prefixIcon: child,
             fillColor: Colors.white,
@@ -110,25 +108,24 @@ class FreeWidget {
             hintText:hintText,
             enabledBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(10.0),
-              borderSide: BorderSide(
+              borderSide: const BorderSide(
                 color: Colors.white10,
 
               ),
             ),
             focusedBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(10),
-              borderSide: BorderSide(
+              borderSide: const BorderSide(
                 color: Colors.yellowAccent
               )
             ),
           ),
         ),
-        SizedBox(height: 8,)
+        const SizedBox(height: 8,)
       ],
     );
   }
   Widget sizeBoxForm({ double? height,double? width,Widget? child}){
-    return SizedBox();
+    return const SizedBox();
   }
-
 }

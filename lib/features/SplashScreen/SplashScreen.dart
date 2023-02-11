@@ -1,6 +1,8 @@
 import 'package:animated_splash_screen/animated_splash_screen.dart';
 import 'package:flutter/material.dart';
-import 'package:tawssel/UI/Screen/SignLog/sginORlog.dart';
+
+import '../SignLog/presentation/views/sginORlog.dart';
+
 
 class Splash_Screen {
   static SplashScreen() {
@@ -12,7 +14,7 @@ class Splash_Screen {
         height: 200,
         width: 200,
         child: Column(
-          children: [
+          children: const [
             Image(
               fit:BoxFit.fitHeight,
               image: AssetImage('assets/image/splash.png'),

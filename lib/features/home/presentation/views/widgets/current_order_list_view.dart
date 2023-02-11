@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:tawssel/core/utils/styles.dart';
+import '../../../../../core/utils/styles.dart';
 import 'current_order_card.dart';
 
 class CurrentOrderListView extends StatelessWidget {
@@ -7,10 +7,14 @@ class CurrentOrderListView extends StatelessWidget {
     super.key,
     required this.width,
     required this.height,
+    required this.ordersStatus,
+    required this.status,
   });
 
   final double width;
   final double height;
+  final String ordersStatus;
+  final String status;
 
   @override
   Widget build(BuildContext context) {
@@ -22,12 +26,12 @@ class CurrentOrderListView extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.end,
         children: [
-          const Padding(
-            padding: EdgeInsets.only(right: 20, top: 12),
+          Padding(
+            padding: const EdgeInsets.only(right: 20, top: 22),
             child: Text(
-              "الطلبات الحالية",
+              ordersStatus,
               textAlign: TextAlign.right,
-              style: Styles.textStyle22,
+              style: Styles.textStyle20,
             ),
           ),
           ListView.builder(
@@ -37,7 +41,7 @@ class CurrentOrderListView extends StatelessWidget {
             itemBuilder: (context, index) {
               return Padding(
                 padding: const EdgeInsets.all(8.0),
-                child: CurrentOrderCard(width: width, height: height),
+                child: CurrentOrderCard(width: width, height: height, status: status,),
               );
             },
           ),
