@@ -232,7 +232,7 @@ class CustomField extends StatelessWidget {
         height: 60,
         child: TextField(
           controller: Controller,
-          style: const TextStyle(color: Colors.grey),
+          style: const TextStyle(color: Color(0xff474747)),
           textAlign: TextAlign.right,
           autofocus: true,
           decoration: InputDecoration(

@@ -7,10 +7,10 @@ class ProfileScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    TextEditingController names = TextEditingController();
-    TextEditingController PhoneNumber = TextEditingController();
-    TextEditingController email = TextEditingController();
-    TextEditingController address = TextEditingController();
+    TextEditingController names = TextEditingController()..text = 'كرسبي & كرانشي';
+    TextEditingController PhoneNumber = TextEditingController()..text = '0102222145441';
+    TextEditingController email = TextEditingController()..text = 'Support@Crisp-Cranchy.com';
+    TextEditingController address = TextEditingController()..text = 'شارع 10 - باب الشعرية - القاهرة';
 
     return Scaffold(
       appBar: AppBar(
