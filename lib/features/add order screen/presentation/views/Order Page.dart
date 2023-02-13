@@ -5,6 +5,12 @@ class NewOrder extends StatelessWidget {
  static String id='New Order';
   @override
   Widget build(BuildContext context) {
+    TextEditingController Productname = TextEditingController();
+    TextEditingController ProductPrice = TextEditingController();
+    TextEditingController AgentName = TextEditingController();
+    TextEditingController AgentAddress = TextEditingController();
+    TextEditingController AgentNumber = TextEditingController();
+    TextEditingController DeliveryPrice = TextEditingController();
     return Scaffold(
       appBar:
       AppBar(
@@ -28,7 +34,7 @@ class NewOrder extends StatelessWidget {
         backgroundColor: Colors.transparent,
         leading: IconButton(
           onPressed: () {},
-          icon: SvgPicture.asset("image/Group 11387.svg"),
+          icon: SvgPicture.asset("images/Profile Image/Group 11387.svg"),
         ),
       ),
       backgroundColor: const Color(0xfff1f4f3),
@@ -128,7 +134,7 @@ class NewOrder extends StatelessWidget {
                       ],),
                     Row(textDirection: TextDirection.rtl,
                       children: [
-                      IconButton(onPressed: (){}, icon: SvgPicture.asset("image/Group 11447.svg"),),
+                      IconButton(onPressed: (){}, icon: SvgPicture.asset("images/Profile Image/Group 11447.svg"),),
                         const Text(
                           'حذف',
                           style: TextStyle(
@@ -139,7 +145,7 @@ class NewOrder extends StatelessWidget {
                           textAlign: TextAlign.right,
                           softWrap: false,
                         ),
-                        IconButton(onPressed: (){}, icon: SvgPicture.asset("image/Group 11448.svg"),),
+                        IconButton(onPressed: (){}, icon: SvgPicture.asset("images/Profile Image/Group 11448.svg"),),
                         const Text(
                           'تعديل',
                           style: TextStyle(
@@ -152,8 +158,8 @@ class NewOrder extends StatelessWidget {
                         ),
                     ],),
                     const Divider(color: Colors.grey,indent: 22,endIndent: 22,thickness: 1),
-                    CustomField(hint:'أسم المنتج',prefix: '',),
-                    CustomField(hint: 'سعر المنتج',prefix: 'ج.م',),
+                    CustomField(hint:'أسم المنتج',prefix: '',Controller: Productname,),
+                    CustomField(hint: 'سعر المنتج',prefix: 'ج.م',Controller: ProductPrice,),
 
                     Center(
                         child: Padding(
@@ -198,10 +204,10 @@ class NewOrder extends StatelessWidget {
                 softWrap: false,
               ),
             ),
-            CustomField(hint: 'أسم العميل', prefix: '',),
-            CustomField(hint: 'عنوان العميل', prefix: '',prefixIcon: const Icon(Icons.location_on_outlined),prefixIconColor: Colors.black,),
-            CustomField(hint: 'رقم العميل', prefix: '', ),
-            CustomField(hint: 'تكلفة التوصيل', prefix: '',),
+            CustomField(hint: 'أسم العميل', prefix: '',Controller: AgentName,),
+            CustomField(hint: 'عنوان العميل', prefix: '',prefixIcon: const Icon(Icons.location_on_outlined),prefixIconColor: Colors.black,Controller: AgentAddress,),
+            CustomField(hint: 'رقم العميل', prefix: '',Controller: AgentNumber, ),
+            CustomField(hint: 'تكلفة التوصيل', prefix: '',Controller: DeliveryPrice,),
           ],
         ),
       ),
@@ -215,7 +221,8 @@ class CustomField extends StatelessWidget {
  late final  String prefix;
  late final   Widget? prefixIcon;
  late final   prefixIconColor;
- CustomField({required this.hint,required this.prefix,this.prefixIcon,this.prefixIconColor});
+ late final  TextEditingController Controller;
+ CustomField({required this.hint,required this.prefix,this.prefixIcon,this.prefixIconColor,required this.Controller});
 
   @override
   Widget build(BuildContext context) {
@@ -224,6 +231,7 @@ class CustomField extends StatelessWidget {
       child: SizedBox(
         height: 60,
         child: TextField(
+          controller: Controller,
           style: const TextStyle(color: Colors.grey),
           textAlign: TextAlign.right,
           autofocus: true,
