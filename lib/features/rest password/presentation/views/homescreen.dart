@@ -24,36 +24,33 @@ class Homescreen extends StatelessWidget {
       top: true,
       child: Scaffold(
         backgroundColor: backgroundcolor,
-        body: Column(
-          children: [
-            const CustomAppBar(
-              maintext: 'استرجاع كلمة المرور',
-              subtext:
-                  'قم بإدخال رقم الهاتف أو البريد الإلكتروني لإسترجاع كلمة \nالمرور',
-            ),
-            SizedBox(
-              height: height * 0.1,
-            ),
-            boximage(image: 'images/Rest Pass – 1.png'),
-            SizedBox(
-              height: height * .02,
-            ),
-            const country(),
-            SizedBox(
-              height: height * .01,
-            ),
-            Button(text: 'ارسال',
+        body: SingleChildScrollView(
+          child: Column(
+            children: [
+              const CustomAppBar(
+                maintext: 'استرجاع كلمة المرور',
+                subtext:
+                    'قم بإدخال رقم الهاتف أو البريد الإلكتروني لإسترجاع كلمة \nالمرور',
               ),
-            SizedBox(
-              height: height * .30,
-            ),
-            GestureDetector(
-              onTap: (){
-                // Navigator.push(context, MaterialPageRoute(builder: (context)=>NewPassword()));
-              },
-              child: const Richspan(),
-            )
-          ],
+              SizedBox(
+                height: height * 0.1,
+              ),
+              boximage(image: 'images/Rest Pass – 1.png'),
+              SizedBox(
+                height: height * .02,
+              ),
+              const country(),
+              SizedBox(
+                height: height * .01,
+              ),
+              Button(text: 'ارسال',
+                ),
+              SizedBox(
+                height: height * .30,
+              ),
+              const Richspan()
+            ],
+          ),
         ),
       ),
     );

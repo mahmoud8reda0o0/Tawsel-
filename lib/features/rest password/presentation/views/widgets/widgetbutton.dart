@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tawssel/features/rest%20password/presentation/views/widgets/firstbottomsheet.dart';
 
 class Button extends StatelessWidget {
   Button({
@@ -15,14 +16,14 @@ class Button extends StatelessWidget {
           primary: Color(0xFFFF6600),
         ),
         onPressed: () {
-          // showModalBottomSheet(
-          //     backgroundColor: Color(0xFFF3F5F7),
-          //     isScrollControlled: true,
-          //     shape: RoundedRectangleBorder(
-          //         borderRadius:
-          //             BorderRadius.vertical(top: Radius.circular(20))),
-          //     context: context,
-          //     builder: (ctx) => bottomsheetcontainer(height: height));
+          showModalBottomSheet(
+              backgroundColor: Color(0xFFF3F5F7),
+              isScrollControlled: true,
+              shape: RoundedRectangleBorder(
+                  borderRadius:
+                      BorderRadius.vertical(top: Radius.circular(20))),
+              context: context,
+              builder: (ctx) => bottomsheetcontainer(height: height));
         },
         child: Text(
           "${text}",

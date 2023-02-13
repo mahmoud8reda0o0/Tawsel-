@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:tawssel/features/SplashScreen/SplashScreen.dart';
+import 'package:tawssel/features/rest%20password/presentation/views/homescreen.dart';
 import 'features/home/presentation/views/bottom_navigation_bar_view.dart';
 
 void main() {
@@ -18,7 +19,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.deepOrange,
       ),
       home: Scaffold(
-        body: Splash_Screen.SplashScreen(),
+        body: Homescreen(),
         //Splash_Screen.SplashScreen(),
       ),
     );
