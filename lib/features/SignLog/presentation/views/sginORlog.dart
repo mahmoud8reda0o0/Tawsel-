@@ -37,16 +37,18 @@ class SignOrLog_s extends State<SignOrLog> with TickerProviderStateMixin {
                       selectcolor: true,
                       width: _width,
                       buttonName: 'تسجيل الدخول',
+                      buttonColor22: Colors.white,
                     ),
                     const SizedBox(
                       height: 20,
                     ),
                     FreeWidget().elevatedbottom(
-                      page: const LogIn(),
-                      context: context,
+                        page: const LogIn(),
+                        context: context,
                         selectcolor: false,
                         width: _width,
-                        buttonName: 'تسجيل جديد'),
+                        buttonName: 'تسجيل جديد',
+                        buttonColor22: Colors.black),
                   ],
                 ),
               )
@@ -68,26 +70,28 @@ class SignOrLog_s extends State<SignOrLog> with TickerProviderStateMixin {
                           width: _width,
                           assetImage: 'sign1.png',
                           centerTitle: 'إستلام الطلب',
-                          lastTitle: 'هيتم إستلام طلبك من خلال أحد السائقين اللي هتختارهم'),
+                          lastTitle:
+                              'هيتم إستلام طلبك من خلال أحد السائقين اللي هتختارهم'),
                       FreeWidget().carouselSliderItem(
-                          width: _width,
+                        width: _width,
                         assetImage: 'sign2.png',
-                        centerTitle:'التوصيل و التسليم',
-                        lastTitle: 'بعد استلام أرباحك هيقوم أحد السائقين بتوصيل طلبك للعميل',
+                        centerTitle: 'التوصيل و التسليم',
+                        lastTitle:
+                            'بعد استلام أرباحك هيقوم أحد السائقين بتوصيل طلبك للعميل',
                       ),
                       FreeWidget().carouselSliderItem(
-                          width: _width,
-                        assetImage:'sign3.png' ,
+                        width: _width,
+                        assetImage: 'sign3.png',
                         centerTitle: 'تسليم الأرباح ',
-                        lastTitle:'هتاخد تكاليف الطلب وأنت في مكانك وسيب الباقي علينا' ,
+                        lastTitle:
+                            'هتاخد تكاليف الطلب وأنت في مكانك وسيب الباقي علينا',
                       ),
                     ],
                     options: CarouselOptions(
-                      pageSnapping: true,
-                      viewportFraction: 1,
-                      autoPlay: true,
-                      autoPlayAnimationDuration: const Duration(seconds: 1)
-                    ),
+                        pageSnapping: true,
+                        viewportFraction: 1,
+                        autoPlay: true,
+                        autoPlayAnimationDuration: const Duration(seconds: 1)),
                   ),
                 ),
               )

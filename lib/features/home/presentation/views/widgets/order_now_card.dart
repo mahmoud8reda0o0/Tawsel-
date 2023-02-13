@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:tawssel/features/add%20order%20screen/presentation/views/Order%20Page.dart';
 
 import '../../../../../core/utils/styles.dart';
 
@@ -35,7 +36,13 @@ class OrderNowCard extends StatelessWidget {
                   style: Styles.textStyle20,
                 ),
                 ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    // Navigator.of(context).push(
+                    //   MaterialPageRoute(
+                    //     builder: (context) => NewOrder(),
+                    //   ),
+                    // );
+                  },
                   child: const Padding(
                     padding: EdgeInsets.symmetric(horizontal: 8),
                     child: Text(

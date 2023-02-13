@@ -19,7 +19,7 @@ class Splash_Screen {
               fit:BoxFit.fitHeight,
               image: AssetImage('assets/image/splash.png'),
             ),
-            Center(child: Text(' توصيل ',style: TextStyle(fontSize: 30,color: Colors.black,fontWeight: FontWeight.bold),),)
+            Center(child: Text('     تـوصـيـل - TAWSEL',style: TextStyle(fontSize: 20,color: Colors.black,fontWeight: FontWeight.bold),),)
 
           ],
         ),

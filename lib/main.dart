@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tawssel/features/SplashScreen/SplashScreen.dart';
 import 'features/home/presentation/views/bottom_navigation_bar_view.dart';
 
 void main() {
@@ -16,8 +17,8 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.deepOrange,
       ),
-      home: const Scaffold(
-        body: BottomNavigationBarView(),
+      home: Scaffold(
+        body: Splash_Screen.SplashScreen(),
         //Splash_Screen.SplashScreen(),
       ),
     );

@@ -4,8 +4,8 @@ import 'package:tawssel/features/order%20details/Presentation/Views/order_detail
 import '../../../../../core/utils/constants.dart';
 import '../../../../../core/utils/styles.dart';
 
-class CurrentOrderCard extends StatelessWidget {
-  const CurrentOrderCard({
+class OrderDetailsCard extends StatelessWidget {
+  const OrderDetailsCard({
     super.key,
     required this.width,
     required this.height,
@@ -34,7 +34,7 @@ class CurrentOrderCard extends StatelessWidget {
         ),
         child: Padding(
           padding:
-              const EdgeInsets.only(top: 12, right: 12, left: 12, bottom: 18),
+              const EdgeInsets.only(top: 12, right: 12, left: 12, bottom: 12),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.end,
             children: [
@@ -120,32 +120,6 @@ class CurrentOrderCard extends StatelessWidget {
                     ),
                   ),
                 ],
-              ),
-              const SizedBox(
-                height: 8,
-              ),
-              Center(
-                child: SizedBox(
-                  height: height * 0.06,
-                  width: width * 0.8,
-                  child: ElevatedButton(
-                      style: ElevatedButton.styleFrom(
-                        backgroundColor: kButtonColor1,
-                      ),
-                      onPressed: () {
-                        Navigator.of(context).push(MaterialPageRoute(
-                          builder: (context) {
-                            return OrderDetails();
-                          },
-                        ));
-                      },
-                      child: Text(
-                        "عرض التفاصيل",
-                        style: Styles.textStyle16.copyWith(
-                          color: kTextGrey,
-                        ),
-                      )),
-                ),
               ),
             ],
           ),

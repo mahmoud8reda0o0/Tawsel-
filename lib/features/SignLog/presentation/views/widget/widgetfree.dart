@@ -2,28 +2,37 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 
 class FreeWidget {
-  Widget elevatedbottom({required BuildContext context,required bool selectcolor,required double width, required String buttonName, MaterialColor? buttonColor,required var page}) {
+  Widget elevatedbottom(
+      {required BuildContext context,
+      required bool selectcolor,
+      required double width,
+      required String buttonName,
+        required Color buttonColor22,
+      MaterialColor? buttonColor,
+      required var page}) {
     return ElevatedButton(
       onPressed: () {
-        Navigator.push(context, MaterialPageRoute(builder: (context)=>page));
+        Navigator.push(context, MaterialPageRoute(builder: (context) => page));
       },
       style: ElevatedButton.styleFrom(
-        primary: selectcolor? Colors.orange[800] : Colors.white,
+        primary: selectcolor ? Colors.orange[800] : Colors.white,
       ),
       child: SizedBox(
-        height:47,
+        height: 47,
         width: width * 0.9,
         child: Center(
           child: Text(
             buttonName,
-            style: const TextStyle(
-                fontSize: 20, fontWeight: FontWeight.bold, color: Colors.black),
+            style: TextStyle(
+                fontSize: 20, fontWeight: FontWeight.bold, color: buttonColor22),
           ),
         ),
       ),
     );
   }
-  Widget backgroundScreenImage({required double height,required double width}){
+
+  Widget backgroundScreenImage(
+      {required double height, required double width}) {
     return Container(
       height: height,
       width: width,
@@ -37,14 +46,21 @@ class FreeWidget {
           )),
     );
   }
-  Widget backgroundScreenColor({required double height,required double width}){
+
+  Widget backgroundScreenColor(
+      {required double height, required double width}) {
     return Container(
       height: height,
       width: width,
       color: Colors.black.withOpacity(0.5),
     );
   }
-  Widget carouselSliderItem ({required double width,required String assetImage,required String centerTitle,required String lastTitle}){
+
+  Widget carouselSliderItem(
+      {required double width,
+      required String assetImage,
+      required String centerTitle,
+      required String lastTitle}) {
     return Container(
       height: 280,
       width: width * 0.9,
@@ -83,16 +99,25 @@ class FreeWidget {
       ),
     );
   }
-  Widget FormSignIn(){
-    return Form(child: Column(),);
+
+  Widget FormSignIn() {
+    return Form(
+      child: Column(),
+    );
   }
-  Widget textFormField({required TextEditingController controller,String? hintText,bool passEye=false,Widget? child,TextInputType? type}){
+
+  Widget textFormField(
+      {required TextEditingController controller,
+      String? hintText,
+      bool passEye = false,
+      Widget? child,
+      TextInputType? type}) {
     return Column(
       children: [
         TextFormField(
           controller: controller,
           validator: (value) {
-            if (value == null||value.length<5 )
+            if (value == null || value.length < 5)
               return 'اعد ادخال البيانات صحيحة ';
             else
               return null;
@@ -105,27 +130,26 @@ class FreeWidget {
             prefixIcon: child,
             fillColor: Colors.white,
             filled: true,
-            hintText:hintText,
+            hintText: hintText,
             enabledBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(10.0),
               borderSide: const BorderSide(
                 color: Colors.white10,
-
               ),
             ),
             focusedBorder: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(10),
-              borderSide: const BorderSide(
-                color: Colors.yellowAccent
-              )
-            ),
+                borderRadius: BorderRadius.circular(10),
+                borderSide: const BorderSide(color: Colors.yellowAccent)),
           ),
         ),
-        const SizedBox(height: 8,)
+        const SizedBox(
+          height: 8,
+        )
       ],
     );
   }
-  Widget sizeBoxForm({ double? height,double? width,Widget? child}){
+
+  Widget sizeBoxForm({double? height, double? width, Widget? child}) {
     return const SizedBox();
   }
 }
