@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
+import '../../../Profile/Presentation/Views/Profile_Screen.dart';
 import '../../../add order screen/presentation/views/Order Page.dart';
 import 'home_view.dart';
 import 'orders_history_view.dart';
 
 class BottomNavigationBarView extends StatefulWidget {
-  BottomNavigationBarView({Key? key}) : super(key: key);
+  const BottomNavigationBarView({Key? key}) : super(key: key);
 
   @override
   State<BottomNavigationBarView> createState() =>
@@ -20,7 +21,7 @@ class _BottomNavigationBarViewState extends State<BottomNavigationBarView> {
     const HomeView(),
     const OrdersHistoryView(),
     NewOrder(),
-    const Text("test"),
+    const ProfileScreen(),
   ];
 
   @override

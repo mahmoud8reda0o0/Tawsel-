@@ -1,11 +1,5 @@
-
 import 'package:flutter/material.dart';
-import 'package:tawssel/features/Profile/Presentation/Views/Profile_Screen.dart';
-import 'package:tawssel/features/SplashScreen/SplashScreen.dart';
-import 'package:tawssel/features/add order screen/presentation/views/Order Page.dart';
-
-import 'features/rest password/presentation/views/homescreen.dart';
-
+import 'features/home/presentation/views/bottom_navigation_bar_view.dart';
 
 void main() {
   runApp(const MyApp());
@@ -21,9 +15,8 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.deepOrange,
       ),
-      home:   Scaffold(
-        body:  ProfileScreen(),
-        //Kareem
+      home: const Scaffold(
+        body: BottomNavigationBarView(),
         //Splash_Screen.SplashScreen(),
       ),
     );
