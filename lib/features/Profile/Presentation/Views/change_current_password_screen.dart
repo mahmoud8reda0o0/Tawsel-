@@ -18,7 +18,7 @@ class ChangeCurrentPasswordScreen extends StatelessWidget {
         child: Column(
           children: [
             Container(
-              height: _height * 0.15,
+              height: _height * 0.1,
               width: _width,
               color: Colors.white10,
               child: const Center(
@@ -26,7 +26,9 @@ class ChangeCurrentPasswordScreen extends StatelessWidget {
                   title: Text(
                     '       تغير الرقم السري ',
                     style: TextStyle(
-                        fontSize: 20,
+                        fontSize: 18,
+
+                        fontFamily: ('Cairo'),
                         color: Colors.black,
                         fontWeight: FontWeight.bold),
                     textAlign: TextAlign.right,
@@ -40,7 +42,7 @@ class ChangeCurrentPasswordScreen extends StatelessWidget {
               ),
             ),
             Container(
-              height: _height * 0.85,
+              height: _height * 0.87,
               width: _width,
               decoration: BoxDecoration(
                 boxShadow: const [
@@ -128,7 +130,7 @@ class ChangeCurrentPasswordScreen extends StatelessWidget {
                               'حفظ التغيرات',
                               style: TextStyle(
                                   color: Colors.white,
-                                  fontSize: 30,
+                                  fontSize: 15,
                                   fontWeight: FontWeight.bold,
                                   fontStyle: FontStyle.italic),
                             ),
@@ -161,7 +163,7 @@ class ChangeCurrentPasswordScreen extends StatelessWidget {
           alignment: Alignment.centerRight,
           child: Text(
             lableText,
-            style: const TextStyle(fontSize: 23, color: Colors.black),
+            style: const TextStyle(fontSize: 15, color: Colors.black),
           ),
         ),
         const SizedBox(
@@ -184,7 +186,7 @@ class ChangeCurrentPasswordScreen extends StatelessWidget {
             fillColor: Colors.white,
             prefixIcon: perfixicon,
             hintText: hintTitle,
-            hintStyle: const TextStyle(fontSize: 20),
+            //hintStyle: const TextStyle(fontSize: 15),
             errorStyle: const TextStyle(fontSize: 10),
             border: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(10),

@@ -15,6 +15,7 @@ class MyApp extends StatelessWidget {
       routerConfig: AppRouter.router,
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
+        fontFamily: ('Cairo'),
         primarySwatch: Colors.deepOrange,
       ),
     );
