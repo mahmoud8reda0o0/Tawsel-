@@ -19,8 +19,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.deepOrange,
       ),
       home: Scaffold(
-        body: Homescreen(),
-        //Splash_Screen.SplashScreen(),
+        body: Splash_Screen.SplashScreen(),
       ),
     );
   }
