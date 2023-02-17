@@ -10,6 +10,7 @@ import '../../features/add order screen/presentation/views/Order Page.dart';
 import '../../features/home/presentation/views/bottom_navigation_bar_view.dart';
 import '../../features/home/presentation/views/home_view.dart';
 import '../../features/rest password/presentation/views/homescreen.dart';
+import '../../features/rest password/presentation/views/newpassword.dart';
 
 abstract class AppRouter {
   static const kBottomNavigationBarPage = '/BottomNavigationBarPage';
@@ -21,6 +22,7 @@ abstract class AppRouter {
   static const kRestPasswordPage = '/RestPasswordPage';
   static const kSignInPage = '/SignInPage';
   static const kLogInPage = '/LogInPage';
+  static const kNewPasswordPage = '/NewPasswordPage';
 
   static final router = GoRouter(
     routes: [
@@ -63,6 +65,10 @@ abstract class AppRouter {
       GoRoute(
         path: kRestPasswordPage,
         builder: (context, state) => const Homescreen(),
+      ),
+      GoRoute(
+        path: kNewPasswordPage,
+        builder: (context, state) => const NewPassword(),
       ),
     ],
   );

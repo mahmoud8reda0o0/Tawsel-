@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:tawssel/features/rest%20password/presentation/views/widgets/Elevetdbottomsheet.dart';
 import 'package:tawssel/features/rest%20password/presentation/views/widgets/TextformOtp.dart';
 import 'package:tawssel/features/rest%20password/presentation/views/widgets/sucssesbottomsheet.dart';
+
+import '../../../../../core/utils/app_router.dart';
 
 class bottomsheetcontainer extends StatelessWidget {
   const bottomsheetcontainer({
@@ -34,20 +37,20 @@ class bottomsheetcontainer extends StatelessWidget {
                               fontWeight: FontWeight.bold,
                               fontFamily: 'cairo'),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           width: 95,
                         ),
                         IconButton(
                             onPressed: () {
                               Navigator.pop(context);
                             },
-                            icon: Icon(
+                            icon: const Icon(
                               Icons.clear,
                             ))
                       ],
                     ),
                   ),
-                  Text(
+                  const Text(
                     'من فضلك أدخل رمز التأكيد المكون من 4 أرقام المرسلة علي هذا الرقم *******45',
                     textAlign: TextAlign.center,
                     textDirection: TextDirection.rtl,
@@ -57,23 +60,23 @@ class bottomsheetcontainer extends StatelessWidget {
                         color: Color(0xFF343434),
                         fontFamily: 'cairo'),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 20,
                   ),
                   Form(
                       child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
+                    children: const [
                       OTP(),
                       OTP(),
                       OTP(),
                       OTP(),
                     ],
                   )),
-                  SizedBox(
+                  const SizedBox(
                     height: 10,
                   ),
-                  Text(
+                  const Text(
                     "إعادة إرسال الكود",
                     textDirection: TextDirection.rtl,
                     style: TextStyle(
@@ -82,26 +85,30 @@ class bottomsheetcontainer extends StatelessWidget {
                       fontFamily: 'cairo',
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 10,
                   ),
                   Elvetedbottomsheet(
                     text: 'إرسال الرمز',
                     textStyle: textstyle1,
-                    color: Color(0xFFFF6600),
+                    color: const Color(0xFFFF6600),
                     function: () {
                       Navigator.pop(context);
                       showModalBottomSheet(
-                          backgroundColor: Color(0xFFF3F5F7),
-                          isScrollControlled: true,
-                          isDismissible: true,
-                          elevation: 4,
-                          enableDrag: true,
-                          shape: RoundedRectangleBorder(
-                              borderRadius:
-                              BorderRadius.vertical(top: Radius.circular(20))),
-                          context: context,
-                          builder: (ctx) => SingleChildScrollView(child: sucssessheetcontainer(height: height)));
+                        backgroundColor: const Color(0xFFF3F5F7),
+                        isScrollControlled: true,
+                        isDismissible: true,
+                        elevation: 4,
+                        enableDrag: true,
+                        shape: const RoundedRectangleBorder(
+                            borderRadius: BorderRadius.vertical(
+                                top: Radius.circular(20))),
+                        context: context,
+                        builder: (ctx) => SingleChildScrollView(
+                          child: sucssessheetcontainer(height: height),
+                        ),
+                      );
+
                     },
                   )
                 ]),

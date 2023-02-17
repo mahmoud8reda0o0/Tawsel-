@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:tawssel/features/order%20details/Presentation/Views/order_details.dart';
 
+import '../../../../../core/utils/app_router.dart';
 import '../../../../../core/utils/constants.dart';
 import '../../../../../core/utils/styles.dart';
 
@@ -133,11 +135,9 @@ class CurrentOrderCard extends StatelessWidget {
                         backgroundColor: kButtonColor1,
                       ),
                       onPressed: () {
-                        Navigator.of(context).push(MaterialPageRoute(
-                          builder: (context) {
-                            return OrderDetails();
-                          },
-                        ));
+                        GoRouter.of(context).push(
+                          AppRouter.kOrderDetailsPage,
+                        );
                       },
                       child: Text(
                         "عرض التفاصيل",

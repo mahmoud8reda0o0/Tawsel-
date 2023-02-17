@@ -27,11 +27,6 @@ class Button extends StatelessWidget {
                       BorderRadius.vertical(top: Radius.circular(20))),
               context: context,
               builder: (ctx) => bottomsheetcontainer(height: height));
-          Navigator.push(
-              context,
-              MaterialPageRoute(
-                builder: (context) => BottomNavigationBarView(),
-              ));
         },
         child: Text(
           "${text}",
