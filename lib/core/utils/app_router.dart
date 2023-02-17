@@ -7,10 +7,12 @@ import '../../features/SignLog/presentation/views/SignIn.dart';
 import '../../features/SignLog/presentation/views/sginORlog.dart';
 import '../../features/SplashScreen/SplashScreen.dart';
 import '../../features/add order screen/presentation/views/Order Page.dart';
+import '../../features/home/presentation/views/bottom_navigation_bar_view.dart';
 import '../../features/home/presentation/views/home_view.dart';
 import '../../features/rest password/presentation/views/homescreen.dart';
 
 abstract class AppRouter {
+  static const kBottomNavigationBarPage = '/BottomNavigationBarPage';
   static const kHomePage = '/HomeView';
   static const kOrderDetailsPage = '/OrderDetailsPage';
   static const kAddOrderPage = '/AddOrderPage';
@@ -39,6 +41,10 @@ abstract class AppRouter {
         builder: (context, state) => const LogIn(),
       ),
       GoRoute(
+        path: kBottomNavigationBarPage,
+        builder: (context, state) => const BottomNavigationBarView(),
+      ),
+      GoRoute(
         path: kHomePage,
         builder: (context, state) => const HomeView(),
       ),
@@ -58,7 +64,6 @@ abstract class AppRouter {
         path: kRestPasswordPage,
         builder: (context, state) => const Homescreen(),
       ),
-
     ],
   );
 }

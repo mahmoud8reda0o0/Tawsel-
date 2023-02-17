@@ -1,5 +1,7 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+import 'package:tawssel/core/utils/app_router.dart';
 import 'package:tawssel/features/SignLog/presentation/views/widget/widgetfree.dart';
 
 import '../../../home/presentation/views/bottom_navigation_bar_view.dart';
@@ -16,14 +18,8 @@ class SignIn_s extends State<SignIn> {
   TextEditingController _passwordCon = TextEditingController();
 
   Widget build(BuildContext context) {
-    double _height = MediaQuery
-        .of(context)
-        .size
-        .height;
-    double _width = MediaQuery
-        .of(context)
-        .size
-        .width;
+    double _height = MediaQuery.of(context).size.height;
+    double _width = MediaQuery.of(context).size.width;
     return Scaffold(
       body: SingleChildScrollView(
         child: Stack(
@@ -102,11 +98,11 @@ class SignIn_s extends State<SignIn> {
                                 },
                                 icon: _passwordEye
                                     ? const Icon(
-                                  Icons.remove_red_eye,
-                                  color: Colors.blue,
-                                )
+                                        Icons.remove_red_eye,
+                                        color: Colors.blue,
+                                      )
                                     : const Icon(
-                                    Icons.remove_red_eye_outlined)),
+                                        Icons.remove_red_eye_outlined)),
                             fillColor: Colors.white,
                             filled: true,
                             hintText: 'الرقم السري ',
@@ -122,8 +118,9 @@ class SignIn_s extends State<SignIn> {
                                 content: Text('Open Forget Password Pages'),
                               ),
                             );
-                            Navigator.push(context, MaterialPageRoute(
-                              builder: (context) => Homescreen(),));
+                            GoRouter.of(context).push(
+                              AppRouter.kRestPasswordPage,
+                            );
                           },
                           child: const Align(
                             alignment: Alignment.centerLeft,
@@ -143,15 +140,10 @@ class SignIn_s extends State<SignIn> {
                                   duration: Duration(seconds: 1),
                                 ),
                               );
-                              Navigator.of(context).push(
-                                MaterialPageRoute(
-                                  builder: (context) {
-                                    return BottomNavigationBarView();
-                                  },
-                                ),
+                              GoRouter.of(context).go(
+                                AppRouter.kBottomNavigationBarPage,
                               );
-                            }
-                            else
+                            } else
                               print('else');
                           },
                           style: ElevatedButton.styleFrom(
@@ -185,10 +177,7 @@ class SignIn_s extends State<SignIn> {
 
   Widget sizedBox(BuildContext context) {
     return SizedBox(
-      height: MediaQuery
-          .of(context)
-          .size
-          .height * 0.01,
+      height: MediaQuery.of(context).size.height * 0.01,
     );
   }
 }
