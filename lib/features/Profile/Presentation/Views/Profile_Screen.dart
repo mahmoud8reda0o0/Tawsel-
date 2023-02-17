@@ -50,7 +50,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
               Container(
                 margin: const EdgeInsets.only(top: 80.0),
                 width: MediaQuery.of(context).size.width,
-                height: MediaQuery.of(context).size.height * 0.85,
+                height: MediaQuery.of(context).size.height * 0.9,
                 decoration: const BoxDecoration(
                     color: Colors.white,
                     borderRadius: BorderRadius.only(
