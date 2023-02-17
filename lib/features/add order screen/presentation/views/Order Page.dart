@@ -73,8 +73,8 @@ class NewOrder extends StatelessWidget {
                             Padding(
                               padding: const EdgeInsets.only(right: 195),
                               child: TextButton(onPressed: (){}, child: Row(
-                                children: [
-                                  const Text(
+                                children: const [
+                                  Text(
                                     'إضافة منتج آخر',
                                     style: TextStyle(
                                       fontFamily: 'Cairo',
@@ -84,7 +84,7 @@ class NewOrder extends StatelessWidget {
                                     textAlign: TextAlign.right,
                                     softWrap: false,
                                   ),
-                                  const Icon(Icons.add,color: Color(0xffff6600),size: 18,),
+                                  Icon(Icons.add,color: Color(0xffff6600),size: 18,),
                                 ],
                               )),
                             )
@@ -94,8 +94,8 @@ class NewOrder extends StatelessWidget {
                       ),
                     Row(
                       textDirection: TextDirection.rtl,
-                      children: [
-                      const Padding(
+                      children: const [
+                      Padding(
                         padding: EdgeInsets.only(right: 10),
                         child: Text(
                           'بيتزا شيش طاووق - حار',
@@ -112,8 +112,8 @@ class NewOrder extends StatelessWidget {
                     ],),
                       Row(
                         textDirection: TextDirection.rtl,
-                        children: [
-                          const Padding(
+                        children: const [
+                          Padding(
                             padding: EdgeInsets.only(right: 10),
                             child: Text(
                               ': السعر',
@@ -125,7 +125,7 @@ class NewOrder extends StatelessWidget {
                               softWrap: false,
                             ),
                           ),
-                          const Padding(
+                          Padding(
                             padding: EdgeInsets.only(right: 275),
                             child: Text(
                               '250 ج.م',

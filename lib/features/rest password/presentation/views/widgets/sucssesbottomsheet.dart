@@ -41,17 +41,19 @@ class sucssessheetcontainer extends StatelessWidget {
                   Container(
                     //height: 25.0,
                     // width: 25.0,
+                    decoration: const BoxDecoration(
+                      shape: BoxShape.circle,
+                    ),
+                    //height: 25.0,
+                    // width: 25.0,
                     child: const CircleAvatar(
+                      backgroundColor: Color(0xFF15C975),
+                      radius: 40.0,
                       child: Icon(
                         Icons.check_outlined,
                         color: Colors.white,
                         size: 50,
                       ),
-                      backgroundColor: Color(0xFF15C975),
-                      radius: 40.0,
-                    ),
-                    decoration: const BoxDecoration(
-                      shape: BoxShape.circle,
                     ),
                   ),
                   const SizedBox(
@@ -69,7 +71,7 @@ class sucssessheetcontainer extends StatelessWidget {
                     style: TextStyle(fontSize: 15, color: Color(0xFF262626)),
                   ),
                   const SizedBox(
-                    height: 30,
+                    height: 18,
                   ),
                   Elvetedbottomsheet(
                     text: 'حسناً ، فهمت',
