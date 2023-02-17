@@ -9,9 +9,9 @@ class ChangeCurrentPasswordScreen extends StatelessWidget {
     TextEditingController _oldpass = TextEditingController();
     TextEditingController _newPass = TextEditingController();
     TextEditingController _reNewPass = TextEditingController();
-    bool _oldPassBool = true;
-    bool _newPassBool = true;
-    bool _reNewPassBool = true;
+    bool _oldPassBool = false;
+    bool _newPassBool = false;
+    bool _reNewPassBool = false;
     final _formKey = GlobalKey<FormState>();
     return Scaffold(
       body: SafeArea(
@@ -78,7 +78,7 @@ class ChangeCurrentPasswordScreen extends StatelessWidget {
                       ),
                       textformfield(
                         controller: _newPass,
-                        errorTitle: "please enter your old PassWord",
+                        errorTitle: "please enter your new PassWord",
                         hintTitle: '*******',
                         lableText: 'الرقم السري الجديد',
                         passwordMod: !_newPassBool,
@@ -92,7 +92,7 @@ class ChangeCurrentPasswordScreen extends StatelessWidget {
                       ),
                       textformfield(
                         controller: _reNewPass,
-                        errorTitle: "please enter your old PassWord",
+                        errorTitle: "please rewrite your new PassWord",
                         hintTitle: '*******',
                         lableText: 'تاكيد الرقم السري الجديد',
                         passwordMod: !_reNewPassBool,
@@ -187,7 +187,7 @@ class ChangeCurrentPasswordScreen extends StatelessWidget {
             prefixIcon: perfixicon,
             hintText: hintTitle,
             //hintStyle: const TextStyle(fontSize: 15),
-            errorStyle: const TextStyle(fontSize: 10),
+            errorStyle: const TextStyle(fontSize: 15),
             border: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(10),
                 borderSide: const BorderSide(color: Colors.black)),
