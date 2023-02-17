@@ -59,7 +59,7 @@ class NewOrder extends StatelessWidget {
                   child: Column(
                     children: [
                       Padding(
-                        padding: const EdgeInsets.only(top: 10, right: 10),
+                        padding: const EdgeInsets.only(top: 10, right: 6),
                         child: Row(
                           textDirection: TextDirection.rtl,
                           children: [
