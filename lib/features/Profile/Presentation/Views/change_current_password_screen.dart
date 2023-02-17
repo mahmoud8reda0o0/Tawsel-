@@ -28,7 +28,7 @@ class ChangeCurrentPasswordScreen extends StatelessWidget {
                     style: TextStyle(
                         fontSize: 18,
 
-                        fontFamily: ('Cairo'),
+                        //fontFamily: ('Cairo'),
                         color: Colors.black,
                         fontWeight: FontWeight.bold),
                     textAlign: TextAlign.right,
