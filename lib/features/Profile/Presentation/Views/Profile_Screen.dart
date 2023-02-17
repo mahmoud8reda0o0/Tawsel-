@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_keyboard_visibility/flutter_keyboard_visibility.dart';
+import 'package:go_router/go_router.dart';
+import 'package:tawssel/core/utils/app_router.dart';
 import 'package:tawssel/features/add order screen/presentation/views/Order Page.dart';
 import 'package:flutter_svg/svg.dart';
 
@@ -13,13 +15,17 @@ class ProfileScreen extends StatefulWidget {
 class _ProfileScreenState extends State<ProfileScreen> {
   @override
   Widget build(BuildContext context) {
-    TextEditingController names = TextEditingController()..text = 'كرسبي & كرانشي';
-    TextEditingController PhoneNumber = TextEditingController()..text = '0102222145441';
-    TextEditingController email = TextEditingController()..text = 'Support@Crisp-Cranchy.com';
-    TextEditingController address = TextEditingController()..text = 'شارع 10 - باب الشعرية - القاهرة';
+    TextEditingController names = TextEditingController()
+      ..text = 'كرسبي & كرانشي';
+    TextEditingController PhoneNumber = TextEditingController()
+      ..text = '0102222145441';
+    TextEditingController email = TextEditingController()
+      ..text = 'Support@Crisp-Cranchy.com';
+    TextEditingController address = TextEditingController()
+      ..text = 'شارع 10 - باب الشعرية - القاهرة';
 
     return GestureDetector(
-      onTap: ()=> FocusScope.of(context).unfocus(),
+      onTap: () => FocusScope.of(context).unfocus(),
       child: Scaffold(
         appBar: AppBar(
           actions: [
@@ -44,7 +50,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
               Container(
                 margin: const EdgeInsets.only(top: 80.0),
                 width: MediaQuery.of(context).size.width,
-                height: MediaQuery.of(context).size.height * 0.79,
+                height: MediaQuery.of(context).size.height * 0.85,
                 decoration: const BoxDecoration(
                     color: Colors.white,
                     borderRadius: BorderRadius.only(
@@ -148,7 +154,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
                             child: Padding(
                               padding: const EdgeInsets.only(top: 5),
                               child: SizedBox(
-                                height: MediaQuery.of(context).size.height * 0.06,
+                                height:
+                                    MediaQuery.of(context).size.height * 0.06,
                                 width: MediaQuery.of(context).size.width * 0.9,
                                 child: ElevatedButton(
                                   style: ElevatedButton.styleFrom(
@@ -157,6 +164,37 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                   onPressed: () {},
                                   child: const Text(
                                     'حفظ التغييرات',
+                                    style: TextStyle(
+                                      fontFamily: 'Cairo',
+                                      fontSize: 14,
+                                      color: Color(0xffffffff),
+                                      fontWeight: FontWeight.w600,
+                                    ),
+                                    textAlign: TextAlign.right,
+                                    softWrap: false,
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                          Center(
+                            child: Padding(
+                              padding: const EdgeInsets.only(top: 5),
+                              child: SizedBox(
+                                height:
+                                    MediaQuery.of(context).size.height * 0.06,
+                                width: MediaQuery.of(context).size.width * 0.9,
+                                child: ElevatedButton(
+                                  style: ElevatedButton.styleFrom(
+                                    backgroundColor: Colors.deepOrange,
+                                  ),
+                                  onPressed: () {
+                                    GoRouter.of(context).push(
+                                      AppRouter.kChangeCurrentPasswordPage,
+                                    );
+                                  },
+                                  child: const Text(
+                                    'تغيير كلمة السر',
                                     style: TextStyle(
                                       fontFamily: 'Cairo',
                                       fontSize: 14,
@@ -201,7 +239,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
                           child: IconButton(
                             onPressed: () {},
                             icon: SvgPicture.asset(
-                                "images/Profile Image/Group 11448.svg"),
+                              "images/Profile Image/Group 11448.svg",
+                            ),
                           ),
                         ),
                       ),

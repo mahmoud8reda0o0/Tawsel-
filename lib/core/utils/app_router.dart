@@ -2,6 +2,7 @@ import 'package:go_router/go_router.dart';
 import 'package:tawssel/features/order%20details/Presentation/Views/order_details.dart';
 
 import '../../features/Profile/Presentation/Views/Profile_Screen.dart';
+import '../../features/Profile/Presentation/Views/change_current_password_screen.dart';
 import '../../features/SignLog/presentation/views/LogIn.dart';
 import '../../features/SignLog/presentation/views/SignIn.dart';
 import '../../features/SignLog/presentation/views/sginORlog.dart';
@@ -23,6 +24,7 @@ abstract class AppRouter {
   static const kSignInPage = '/SignInPage';
   static const kLogInPage = '/LogInPage';
   static const kNewPasswordPage = '/NewPasswordPage';
+  static const kChangeCurrentPasswordPage = '/ChangeCurrentPasswordPage';
 
   static final router = GoRouter(
     routes: [
@@ -61,6 +63,10 @@ abstract class AppRouter {
       GoRoute(
         path: kProfilePage,
         builder: (context, state) => const ProfileScreen(),
+      ),
+      GoRoute(
+        path: kChangeCurrentPasswordPage,
+        builder: (context, state) => const ChangeCurrentPasswordScreen(),
       ),
       GoRoute(
         path: kRestPasswordPage,
