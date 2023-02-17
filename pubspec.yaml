@@ -40,6 +40,7 @@ dependencies:
   flutter_svg: ^2.0.0+1
   flutter_multi_formatter: ^2.10.2
   flutter_keyboard_visibility:
+  go_router: ^6.0.8
 
 dev_dependencies:
   flutter_test:
