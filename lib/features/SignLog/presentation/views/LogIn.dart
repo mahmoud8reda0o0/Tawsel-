@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:go_router/go_router.dart';
 import 'package:tawssel/features/SignLog/presentation/views/widget/widgetfree.dart';
 import 'package:tawssel/features/home/presentation/views/home_view.dart';
 
+import '../../../../core/utils/app_router.dart';
 import '../../../home/presentation/views/bottom_navigation_bar_view.dart';
 
 class LogIn extends StatefulWidget {
@@ -152,7 +154,8 @@ class LogIn_s extends State<LogIn> {
                           content: Text('Open Main Page'),
                         ),
                       );
-
+                      GoRouter.of(context).pushReplacement(
+                        AppRouter.kBottomNavigationBarPage,);
                     } else
                       print('else');
                   },

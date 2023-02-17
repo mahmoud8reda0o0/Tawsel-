@@ -3,6 +3,8 @@ import 'package:flutter_svg/svg.dart';
 
 class NewOrder extends StatelessWidget {
  static String id='New Order';
+
+  const NewOrder({super.key});
   @override
 
   Widget build(BuildContext context) {

@@ -1,6 +1,7 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:tawssel/features/SignLog/presentation/views/widget/widgetfree.dart';
+import '../../../../core/utils/app_router.dart';
 import 'LogIn.dart';
 import 'SignIn.dart';
 
@@ -32,7 +33,7 @@ class SignOrLog_s extends State<SignOrLog> with TickerProviderStateMixin {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     FreeWidget().elevatedbottom(
-                      page: SignIn(),
+                      page: AppRouter.kSignInPage,
                       context: context,
                       selectcolor: true,
                       width: _width,
@@ -43,7 +44,7 @@ class SignOrLog_s extends State<SignOrLog> with TickerProviderStateMixin {
                       height: 20,
                     ),
                     FreeWidget().elevatedbottom(
-                        page: const LogIn(),
+                        page: AppRouter.kLogInPage,
                         context: context,
                         selectcolor: false,
                         width: _width,

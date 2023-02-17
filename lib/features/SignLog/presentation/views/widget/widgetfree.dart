@@ -1,5 +1,6 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class FreeWidget {
   Widget elevatedbottom(
@@ -12,7 +13,7 @@ class FreeWidget {
       required var page}) {
     return ElevatedButton(
       onPressed: () {
-        Navigator.push(context, MaterialPageRoute(builder: (context) => page));
+         GoRouter.of(context).push(page);
       },
       style: ElevatedButton.styleFrom(
         primary: selectcolor ? Colors.orange[800] : Colors.white,

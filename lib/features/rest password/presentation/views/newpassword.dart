@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:tawssel/features/rest%20password/presentation/views/homescreen.dart';
 import 'package:tawssel/features/rest%20password/presentation/views/widgets/FromNewpass.dart';
 import 'package:tawssel/features/rest%20password/presentation/views/widgets/RichText.dart';
 import 'package:tawssel/features/rest%20password/presentation/views/widgets/customeappbar.dart';
 import 'package:tawssel/features/rest%20password/presentation/views/widgets/imagebox.dart';
 import 'package:tawssel/features/rest%20password/presentation/views/widgets/widgetbutton.dart';
+
+import '../../../../core/utils/app_router.dart';
 
 class NewPassword extends StatelessWidget {
   const NewPassword({Key? key}) : super(key: key);
@@ -19,7 +22,7 @@ class NewPassword extends StatelessWidget {
             body: SingleChildScrollView(
               child: Column(
                 children: [
-                  CustomAppBar(
+                  const CustomAppBar(
                     maintext: 'إنشاء كلمة مرور جديدة',
                     subtext:
                         'قم بإنشاء كلمة مرور جديدة بحيث لا تشابه كلمة المرور القديمه',
@@ -39,7 +42,7 @@ class NewPassword extends StatelessWidget {
                           FormNewPass(
                             text: 'كلمة المرور',
                           ),
-                          SizedBox(
+                          const SizedBox(
                             height: 16,
                           ),
                           FormNewPass(
@@ -52,13 +55,25 @@ class NewPassword extends StatelessWidget {
                   SizedBox(
                     height: height * .02,
                   ),
-                  Button(
-                    text: 'إنشاء كلمة المرور',
-                  ),
+                  ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                        minimumSize: (const Size(380, 48)),
+                        primary: const Color(0xFFFF6600),
+                      ),
+                      onPressed: () {
+                        GoRouter.of(context).go(
+                          AppRouter.kBottomNavigationBarPage,
+                        );
+                      },
+                      child: const Text(
+                        "إنشاء كلمة المرور",
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold, fontSize: 15),
+                      )),
                   SizedBox(
                     height: height * .2,
                   ),
-                  Richspan(),
+                  const Richspan(),
                 ],
               ),
             )));
