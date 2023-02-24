@@ -38,7 +38,9 @@ class _ProfileScreenState extends State<ProfileScreen> {
           elevation: 0,
           backgroundColor: Colors.transparent,
           leading: IconButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.pop(context);
+            },
             icon: SvgPicture.asset("images/Profile Image/Group 11387.svg"),
           ),
         ),
