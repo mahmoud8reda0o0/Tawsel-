@@ -42,7 +42,7 @@ class ChangeCurrentPasswordScreen extends StatelessWidget {
               ),
             ),
             Container(
-              height: _height * 0.7,
+              height: _height * 0.6,
               width: _width,
               decoration: BoxDecoration(
                 boxShadow: const [
